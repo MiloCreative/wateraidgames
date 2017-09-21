@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 1331853753
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: variants/variant-scene
+      Dependencies:
+        Dependency_0: variants/sprites.hd
+    Info_1:
+      Name: variants/sprites.hd
+      Dependencies: {}
+    Info_2:
+      Name: variants/sprites.sd
+      Dependencies: {}
