@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AngryTurds</title>
+    <script src="Build/UnityLoader.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json",{onProgress: UnityProgress});
+
+      function UnityProgress(gameInstance, progress){
+        if(!gameInstance.Module){
+          return;
+        }
+        var water = document.querySelector("#water");
+        water.style.height = Math.floor(66 * progress) + "px";
+
+        if(progress >= 1){
+          document.querySelector("#loadingBox").remove();
+          document.querySelector("#loadingTxt").remove();
+        }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="gameContainer" style="width: 933px; height: 460px; margin: auto"></div>
+    <div id="loadingBox">
+      <div id="bottle">
+        <div id="water"></div>
+      </div>
+      <div id="drop"></div>
+    </div>
+    <div id="loadingTxt">Loading...</div>
+  </body>
+  
+</html>
+
